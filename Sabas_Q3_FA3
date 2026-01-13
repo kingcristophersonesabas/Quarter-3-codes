@@ -1,0 +1,26 @@
+names = ["Friend 1", "Friend 2", "Friend 3"]
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+steps = [
+    [4500, 5200, 4800, 5500, 5300],  # Friend 1 (updated Thursday)
+    [4000, 4100, 3900, 4200, 4600],  # Friend 2
+    [6000, 5800, 5900, 6100, 6200]   # Friend 3
+]
+
+print(f"{names[2]}'s steps on {days[2]}: {steps[2][2]}")
+
+print(f"{names[0]}'s steps: {steps[0]}")
+
+steps[0][3] = 5500
+print("Updating Friend 1's Thursday steps to 5500.")
+print(f"{names[0]}'s updated steps: {steps[0]}")
+
+def summarize_steps(name, step_list):
+    total = sum(step_list)
+    average = total / len(step_list)
+    minimum = min(step_list)
+    maximum = max(step_list)
+    print(f"{name} - Total Steps: {total} | Average: {average:.1f} | Min: {minimum} | Max: {maximum}")
+
+print("\nSummary Output:")
+for i in range(len(names)):
+    summarize_steps(names[i], steps[i])
