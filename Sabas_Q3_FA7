@@ -1,0 +1,24 @@
+names = ["Me", "Lia", "Jake"]
+steps = [
+    [4500, 5200, 4800, 5000, 5300],
+    [4000, 4100, 3900, 4200, 4600],
+    [6000, 5800, 5900, 6100, 6200]
+]
+
+for i in range(len(names)):
+    print(f"{names[i]}'s steps: {steps[i]}")
+
+print("\nSummary:")
+totals = []
+for i in range(len(steps)):
+    total = sum(steps[i])
+    average = total / len(steps[i])
+    totals.append(total)
+    print(f"{names[i]} - Total: {total}, Average: {average:.1f}")
+
+max_value = steps[0][0]
+for row in steps:
+    for value in row:
+        if value > max_value:
+            max_value = value
+print(f"\nMaximum step count in dataset: {max_value}")
